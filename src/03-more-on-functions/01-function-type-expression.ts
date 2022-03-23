@@ -1,3 +1,5 @@
+{
+
 // 可以将函数类型表达式作为一个函数的参数类型
 function greeter(fn: (a: string) => void) {
   fn("hello, world");
@@ -16,3 +18,5 @@ function greeter2(fn: GreetFunction) {
 }
 
 greeter2(printToConsole);
+
+}

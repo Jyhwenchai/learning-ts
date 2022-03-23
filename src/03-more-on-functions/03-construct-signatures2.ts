@@ -1,4 +1,5 @@
-// 对于一些不需要new操作符的类型，你可以随意的选择使用 new 来指定构造器创建对象或者不使用 new 进行创建一个对象
+/// 一些对象，比如 JavaScript 的 Date 对象，可以在有或没有 new 的情况下调用。您可以任意组合相同类型的调用和构造签名：
+//TODO?
 interface CallOrConstruct {
   new (s: string): SomeObject;
   (n: number): number;

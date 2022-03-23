@@ -1,6 +1,8 @@
+{
+/// 可选参数
 // 一个函数的参数可以被声明为可选的
 function f(n?: number) {
-   if (n !== null) {
+   if (n !== undefined) {
      console.log(n!.toFixed(3));
    } else {
      console.log("n value is null.");
@@ -18,3 +20,5 @@ function myForEach(arr: any[], callback: (arg: any, index?: number) => void) {
 }
 myForEach([1, 2, 3], (a) => console.log(a));
 myForEach([1, 2, 3], (a, i) => console.log(a, i));
+
+}

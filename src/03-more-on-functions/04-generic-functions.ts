@@ -1,4 +1,6 @@
-// 泛型在函数中的使用
+{
+/// 泛型函数
+
 function firstElement<Type>(arr: Type[]): Type | undefined {
   return arr[0];
 }
@@ -8,3 +10,5 @@ const n = firstElement([1, 2, 3]);
 const u = firstElement([]);
 
 console.log(s, n, u);
+
+}

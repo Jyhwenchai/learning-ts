@@ -1,3 +1,4 @@
+{
 // 使用一个对象做为函数参数并进行解构
 function sum({ a, b, c }) {
   console.log(a + b + c);
@@ -13,4 +14,6 @@ function sum2({ a, b, c }: {a: number; b: number; c: number}) {
 type ABC = {a: number; b: number; c: number};
 function sum3({a, b,c}: ABC) {
   console.log(a + b + c);
+}
+
 }
