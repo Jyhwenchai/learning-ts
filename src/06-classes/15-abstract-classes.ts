@@ -1,8 +1,9 @@
+{
 // 抽象类，在 TypeScript 中 class、method、field 都可以是抽象的
 abstract class Base {
-   abstract getName(): string;
+   abstract getName(): string
    printName() {
-    console.log("Hello, " + this.getName());
+    console.log("Hello, " + this.getName())
   }
 }
 
@@ -11,15 +12,15 @@ abstract class Base {
 
 // 扩展于抽象类
 class Derived extends Base {
-   getName() {
- 	return "world";
+  getName() {
+  	return "world"
   }
 }
 
-const d = new Derived();
+const d = new Derived()
 d.printName();
 
-// # 抽象类的构造函数签名
+// 抽象类的构造函数签名
 function greet(ctor: typeof Base) {
   //const instance = new ctor();// error, 不能创建一个抽象类的实例
 }
@@ -32,3 +33,4 @@ function greet2(ctor: new () => Base) {
 greet(Derived);
 //greet(Base);//error
 
+}

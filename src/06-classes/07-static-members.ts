@@ -1,3 +1,4 @@
+{
 // 静态成员
 class MyClass {
   static x = 0;
@@ -29,4 +30,4 @@ class Derived extends Base {
 
 console.log(new Derived().myGreeting);
 
-
+}

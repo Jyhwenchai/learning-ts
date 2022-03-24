@@ -1,3 +1,4 @@
+{
 // 数组类型
 // 数组中的数据类型必须是相同的
 
@@ -27,3 +28,4 @@ const rdArray: ReadonlyArray<string> = ["red", "green", "blue"];
 // TypeScript 提供了简短的语法声明数组 `type[]`, 同样也有简单的方式声明只读数组 `readonly type[]`
 const rdArray2: readonly string[] = ["red", "green", "blue"];
 
+}

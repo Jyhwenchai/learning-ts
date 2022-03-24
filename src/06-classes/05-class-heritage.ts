@@ -1,3 +1,4 @@
+{
 // 类的继承
 // 1. 使用 implements 实现 interface
 interface Pingable {
@@ -24,18 +25,20 @@ class NameChecker implements Checkable {
 
 // 同样对于属性也应该显示的写出确定的属性
 interface A {
- x: number;
- y?: number;
+ x: number
+ y?: number
 }
 
 class C implements A {
-  x = 0;
+  x = 0
 }
 
 const c = new C();
 //c.y = 10;	// error
+console.log(c);
 
-// 3.extends 子句
+
+// 3. extends
 // 类可以扩展子其它类型
 class Animal {
   move() {
@@ -65,9 +68,9 @@ class Base {
 class Derived extends Base {
   greet(name?: string) {
     if (name === undefined) {
-	super.greet();
+	    super.greet();
     } else {
-	console.log(`Hello, ${name.toUpperCase()}`);
+      console.log(`Hello, ${name.toUpperCase()}`);
     }
   }
 }
@@ -98,6 +101,8 @@ class AnimalHouse {
 }
 
 class DogHouse extends AnimalHouse {
+// Does not emit JavaScript code,
+// only ensures the types are correct
   declare resident: Dog;
   constructor(dog: Dog) {
     super(dog);
@@ -123,12 +128,12 @@ class Derived2 extends Base2 {
 // 4. 运行派生类的构造器
 const ddd = new Derived2();
 
-// 注意：
+// 注意：FIXME
 class MsgError extends Error {
   constructor(m: string) {
     super(m);
     // Set the prototype explicitly.
-    Object.setPrototypeOf(this, MsgError.prototype);
+    // Object.setPrototypeOf(this, MsgError.prototype);
   }
   sayHello() {
     return "hello " + this.message;
@@ -138,4 +143,4 @@ class MsgError extends Error {
 const err = new MsgError("TypeScript");
 err.sayHello();
 
-
+}

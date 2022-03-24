@@ -1,3 +1,5 @@
+{
+
 // typeof 操作符
 console.log(typeof "Hello world");// 输出 string
 
@@ -19,3 +21,5 @@ function f() {
 
 // 注意区分值与类型，如果要要知道函数 f 的值是什么类型，因该用 typeof
 type P = ReturnType<typeof f>;// P 为 {x: number;}
+
+}

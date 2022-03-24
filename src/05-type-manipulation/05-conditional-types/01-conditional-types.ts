@@ -1,3 +1,5 @@
+{
+
 // 条件类型, 它看起来有点像 ? : 表达式
 interface Animal {
   live(): void;
@@ -26,15 +28,23 @@ function createLabel(id: number): IdLabel;
 function createLabel(name: string): NameLabel;
 function createLabel(nameOrId: string | number): IdLabel | NameLabel;
 function createLabel(nameOrId: string | number): IdLabel | NameLabel {
-  throw "unimplemented";
+  if (typeof nameOrId === 'number') {
+    return { id: nameOrId }
+  } 
+  return { name: nameOrId }
 }
 
 // 上面使用重载的方法列表可以使用下面的方法替代
-type NameOrId<T extends number | string> = T extends number ? IdLabel : NameLabel;
+type NameOrId<T extends number | string> = T extends number ? IdLabel : NameLabel
 function createLabel2<T extends number | string>(idOrName: T): NameOrId<T> {
-  throw "unimplemented";
+  return typeof idOrName === 'number' ? { id: idOrName } as NameOrId<T> : { name: idOrName} as NameOrId<T>
 }
 
 let a = createLabel2("typescript");// a: NameLabel
 let b = createLabel2(2.8);	// b: IdLabel
 let c = createLabel2(Math.random() ? "hello" : 42);	// c: NameLabel | IdLabel
+
+console.log(a, b, c);
+
+
+}

@@ -1,3 +1,5 @@
+{
+
 // 模板字面量类型
 // 模板文面量类型建立在字符串字面量类型之上，并且可以通过联合扩展成许多字符串
 type World = "world";
@@ -14,3 +16,5 @@ type Lang = "en" | "ja" | "pt";
  
 type LocaleMessageIDs = `${Lang}_${AllLocaleIDs}`;
 // type LocaleMessageIDs = "en_welcome_email_id" | "en_email_heading_id" | "en_footer_title_id" | "en_footer_sendoff_id" | "ja_welcome_email_id" | "ja_email_heading_id" | "ja_footer_title_id" | "ja_footer_sendoff_id" | "pt_welcome_email_id" | "pt_email_heading_id" | "pt_footer_title_id" | "pt_footer_sendoff_id"
+
+}

@@ -1,2 +1,5 @@
 "use strict";
-const cc = { color: "red", radius: 42 };
+{
+    const cc = { color: "red", radius: 42 };
+    console.log(cc);
+}

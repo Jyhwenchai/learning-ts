@@ -1,3 +1,5 @@
+{
+
 // using tsc -t es5 03-methods.ts to run
 // 成员方法
 class Point {
@@ -15,36 +17,38 @@ class Point {
 class C {
   _length = 0;
   get length() {
-    return this._length;
+    return this._length
   }
   set length(value) {
-    this._length = length;
+    this._length = length
   }
 }
 
 // TypeScript 对访问器有一些特殊的推理规则：
 // 1. 如果没有 set 只有 get，那么属性会自动变为 readonly
-// 2. 如果 setter 参数的类型，那么从 getter 的返回类型推断
+// 2. 如果 setter 没有指明参数的类型，那么从 getter 的返回类型推断
 // 3. getter 和 setter 必须有相同的成员可见性
 
 // 从 TypeScript 4.3 开始，可以使用不同类型的访问器来获取和设置。
 class Thing {
-  _size = 0;
+  _size = 0
   get size(): number {
-    return this._size;
+    return this._size
   }
 
   set size(value: string | number | boolean) {
-    let num = Number(value);
+    let num = Number(value)
 
     // Don't allow NaN, Infinity, etc
 
-    if (!Number.isFinite(num)) {
-      this._size = 0;
-      return;
-    }
+    // if (!Number.isFinite(num)) {
+    //   this._size = 0
+    //   return
+    // }
 
-    this._size = num;
+    this._size = num
  }
 }
 
+
+}

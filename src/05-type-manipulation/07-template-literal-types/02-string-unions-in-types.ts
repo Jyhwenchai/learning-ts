@@ -1,3 +1,4 @@
+
 // 类型中的字符串联合
 type PropEventSource<Type> = {
     on(eventName: `${string & keyof Type}Changed`, callback: (newValue: any) => void): void;
@@ -16,3 +17,4 @@ person.on("firstNameChanged", (newValue) => {
 });
 
 person.on("firstNameChanged", () => {});
+

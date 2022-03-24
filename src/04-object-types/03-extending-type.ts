@@ -1,3 +1,5 @@
+{
+
 // 扩展类型
 interface BasicAddress {
   name?: string;
@@ -7,12 +9,12 @@ interface BasicAddress {
   postalCode: string;
 }
 
-// 使用 extends 实现继承
+// 使用 extends 实现继承以扩展新的属性
 interface AddressWithUnit extends BasicAddress {
   unit: string;
 }
 
-// TypeScript 允许多继承
+// interface 也可以扩展自多个类型 
 interface Colorful {
   color: string;
 }
@@ -24,5 +26,7 @@ interface Circle {
 interface ColorfulCircle extends Colorful, Circle {}
 
 const cc: ColorfulCircle = {color: "red", radius: 42};
+console.log(cc);
 
 
+}

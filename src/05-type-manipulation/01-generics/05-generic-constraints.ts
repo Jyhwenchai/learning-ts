@@ -1,3 +1,5 @@
+{
+
 // 泛型约束
 interface LengthWise {
   length: number;
@@ -22,11 +24,13 @@ let x = { a: 1, b: 2, c: 3, d: 4 };
 getProperty(x, "a");
 
 // # 在泛型中使用类类型
-// 在 TypeScript 中使用泛型创建工厂时，需要通过其构造函数引用类类型
+// 在 TypeScript 中使用泛型创建工厂时，需要通过其构造函数关联其类的类型
+// 下面的示例指明 c 必须是拥有 new (): Type 构造函数的类
 function create<Type>(c: { new (): Type }): Type {
   return new c();
 }
 
+// 创建一个 Date 对象，Date 有 new (): Date 这个构造函数，所以可以通过 create 方法创建
 let date: Date = create(Date);
 console.log(date);
 
@@ -57,3 +61,4 @@ function createInstance<A extends Animal>(c: new () => A): A {
 createInstance(Lion).keeper.nametag;
 createInstance(Bee).keeper.hasMask;
 
+}

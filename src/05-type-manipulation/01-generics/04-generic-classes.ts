@@ -1,7 +1,9 @@
+{
+
 // 泛型类
 class GenericNumber<NumType> {
-  zeroValue: NumType;
-  add: (x: NumType, y: NumType) => NumType;
+  zeroValue: NumType
+  add: (x: NumType, y: NumType) => NumType
 }
 
 let myNum = new GenericNumber<number>();
@@ -17,3 +19,5 @@ myStringNum.add = function (x, y) {
 };
 
 console.log(myNum.add(1, 2), myStringNum.add("hello ", "world"));
+
+}

@@ -1,3 +1,5 @@
+{
+
 // 成员可见性: public protected private
 class Greeter {
   public greet() {
@@ -8,6 +10,7 @@ class Greeter {
   }
 }
 
+// protected 修饰符对于直接子类可访问
 class SpecialGreeter extends Greeter {
   public howdy() {
     console.log("Howdy, " + this.getName());
@@ -58,3 +61,4 @@ const b = new Base3();
 
 console.log(b["x"]);// 跳过编译检查
 
+}

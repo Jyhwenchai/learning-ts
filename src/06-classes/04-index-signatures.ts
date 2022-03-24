@@ -1,4 +1,6 @@
-// 索引签名
+{
+
+// 在类中使用索引签名
 class MyClass {
   [s: string]: boolean | ((s: string) => boolean);
   
@@ -6,3 +8,12 @@ class MyClass {
     return this[s] as boolean;
   }
 }
+
+const obj: MyClass = new MyClass()
+obj.isSuccess = false
+obj.fn = s => s.length > 0
+
+console.log(obj.check("isSuccess"))
+console.log(obj.check("fn"))
+}
+

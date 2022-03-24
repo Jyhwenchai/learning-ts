@@ -1,5 +1,5 @@
+{
 // 构造器
-
 class Point {
   x: number;
   y: number;
@@ -34,4 +34,6 @@ class Derived extends Base {
     //console.log(this.k);//error, super() 的使用必须在 this 前
     super();
   }
+}
+
 }

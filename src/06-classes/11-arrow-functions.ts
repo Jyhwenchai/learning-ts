@@ -1,5 +1,6 @@
+{
 // 箭头函数
-// 如果您有一个经常以丢失其 this 上下文的方式调用的函数，则使用箭头函数属性而不是方法定义是有意义的：
+// 如果您有一个调用的函数需要忽略其上下文中 this，则使用箭头函数不是方法定义是有意义的：
 class MyClass {
   name = "MyClass";
   getName = () => {
@@ -19,15 +20,14 @@ console.log(g());
 // # this 参数
 // 在方法或函数定义中，名为 this 的初始参数在 TypeScript 中具有特殊含义。这些参数在编译期间被擦除
 class SomeType {}
-function fn(this: SomeType, x:number) {
+// function fn(this: SomeType, x:number) {
 
-}
+// }
 
 // JavaScript 解析为 
 //function fn(x) {}
 
 // 如果你有一个派生类，它的 sameAs 方法现在将只接受同一个派生类的其他实例：
-
 class Box {
   content: string = "";
   sameAs(other: this) {
@@ -38,10 +38,12 @@ class Box {
 class DerivedBox extends Box {
   otherContent: string = "?";
 }
- 
+
 const base = new Box();
 const derived = new DerivedBox();
+const derivedTwo = new DerivedBox();
 //derived.sameAs(base);//error
 
+derived.sameAs(derivedTwo)
 
-
+}
