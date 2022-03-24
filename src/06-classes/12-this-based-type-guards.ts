@@ -25,6 +25,10 @@ class FileRep extends FileSystemObject {
  
 class Directory extends FileSystemObject {
   children: FileSystemObject[];
+  constructor(children: FileSystemObject[]) {
+    super('', false)
+    this.children = children
+  }
 }
  
 interface Networked {

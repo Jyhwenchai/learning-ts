@@ -15,15 +15,15 @@ const p: Point1 = new Point2();
 
 
 class Person {
-  name: string;
-  age: number;
+  name: string = ''
+  age: number = 0
 }
 
 
 class Employee {
-  name: string;
-  age: number;
-  salary: number;
+  name: string = ''
+  age: number = 0
+  salary: number = 0
 }
 
 // OK

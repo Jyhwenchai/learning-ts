@@ -12,9 +12,9 @@
 
   function printAll(strs: string | string[] | null) {
     if (typeof strs === "object") {
-      for (const s of strs) [ // null 也是 object 类型，这里允许结果会error
-        console.log(s)
-      ]
+      // for (const s of strs) { // null 也是 object 类型，这里允许结果会error
+      //   console.log(s)
+      // }
     } else if (typeof strs === "string") {
       console.log(strs)
     }
